@@ -9,6 +9,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  font-family: supercalendron;
 }
 
 #main {
@@ -168,7 +169,6 @@ body {
   #content-2 {
     margin-top: 50px;
   }
-
 }
 
 @media (min-width: 992px) {
