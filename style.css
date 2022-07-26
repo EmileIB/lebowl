@@ -1,0 +1,192 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#main {
+  height: fit-content;
+  width: 100%;
+  padding: 0%;
+  position: relative;
+}
+
+#bg {
+  width: 100%;
+  height: auto;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+}
+
+#info {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  margin: auto;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+
+#links {
+  margin-top: 100px;
+}
+
+#info p {
+  line-height: 70px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+}
+
+#left-waves {
+  width: 20%;
+}
+
+#call-me {
+  width: 70%;
+}
+
+#order-me {
+  width: 88%;
+}
+
+.center {
+  margin: auto;
+}
+
+.verticle-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.myBtn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 510px) {
+  #bg {
+    height: 100%;
+  }
+}
+
+@media (min-width: 320px) {
+  #content-1 {
+    margin-top: 50px;
+  }
+
+  #content-2 {
+    margin-top: 100px;
+  }
+
+  #info {
+    bottom: 20px;
+    font-size: 15px;
+  }
+
+  #info p {
+    line-height: 15px;
+  }
+
+  #links {
+    margin-top: 0px;
+  }
+
+  #main {
+    height: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  #content-1 {
+    margin-top: 50px;
+  }
+
+  #content-2 {
+    margin-top: 50px;
+  }
+
+  #bg {
+    content: url("assets/bg-16by9.png");
+  }
+  #call-me {
+    width: 30%;
+    margin-left: 50px;
+  }
+  #order-me {
+    width: 40%;
+    margin-right: 50px;
+  }
+  #left-waves {
+    width: 15%;
+    margin-left: 50px;
+  }
+  #main {
+    height: fit-content;
+  }
+  #logo {
+    width: 70%;
+    margin: auto;
+  }
+  #info {
+    bottom: 40px;
+    font-size: 25px;
+  }
+
+  #info p {
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  #content-1 {
+    margin-top: 50px;
+  }
+
+  #content-2 {
+    margin-top: 50px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  #content-1 {
+    margin-top: 50px;
+  }
+
+  #content-2 {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 2560px) {
+  #content-1 {
+    margin-top: 50px;
+  }
+
+  #content-2 {
+    margin-top: 50px;
+  }
+}
