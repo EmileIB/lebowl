@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
 @font-face {
   src: url("/assets/Philosopher-Regular.ttf");
   font-family: "Philosopher";
@@ -202,4 +204,17 @@ body {
   #content-2 {
     margin-top: 50px;
   }
+}
+
+.media {
+  border: none;
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.media:hover {
+  color: white;
 }
