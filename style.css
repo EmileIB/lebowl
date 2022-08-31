@@ -133,6 +133,23 @@ body {
     background-size: cover;
     background-position: center;
   }
+
+  .media {
+    border: none;
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .media:hover {
+    color: white;
+  }
+
+  .mb-sm-8 {
+    margin-bottom: 8px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -184,6 +201,19 @@ body {
   #content-2 {
     margin-top: 50px;
   }
+
+  .media {
+    border: none;
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .media:hover {
+    color: white;
+  }
 }
 
 @media (min-width: 992px) {
@@ -204,17 +234,4 @@ body {
   #content-2 {
     margin-top: 50px;
   }
-}
-
-.media {
-  border: none;
-  color: white;
-  margin-right: 10px;
-  margin-left: 10px;
-  width: 30px;
-  height: 30px;
-}
-
-.media:hover {
-  color: white;
 }
