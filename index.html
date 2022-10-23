@@ -40,7 +40,6 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container-fluid" id="main">
-      <img id="bg" />
       <div id="content">
         <div class="row" id="content-1">
           <div class="col-3 verticle-center">
@@ -55,8 +54,10 @@
         <div class="row" id="content-2">
           <div class="col">
             <div id="call-me" class="myBtn center">
-              <a href="tel:+1 (213) 503-3392"
-                ><img src="assets/call-me.svg"
+              <a
+                href="https://www.google.com/maps/place/7959+Melrose+Ave,+Los+Angeles,+CA+90046,+USA/@34.0839415,-118.3630456,21z/data=!4m5!3m4!1s0x80c2becc033a6111:0xe58808f6bb6a39f3!8m2!3d34.0839873!4d-118.363053"
+                target="_blank"
+                ><img src="assets/see-map.png"
               /></a>
             </div>
           </div>
@@ -64,39 +65,47 @@
             <div id="order-me" class="myBtn center">
               <a
                 href="https://www.toasttab.com/le-bowl-7959-melrose-ave/v3/?mode=fulfillment"
-                ><img src="assets/order-me.svg"
+                ><img src="assets/see-menu.png"
               /></a>
             </div>
           </div>
         </div>
       </div>
-      <div id="info">
-        <p>
-          take me out from <br />
-          monday till saturday <br />
-          9am - 9pm
-        </p>
-        <p id="links" class="mb-sm-8">
-          <a class="link" href="mailto:info@lebowl-order.com"
-            >info@lebowl-order.com</a
-          ><br /><a
-            class="link"
-            href="https://www.google.com/maps/place/7959+Melrose+Ave,+Los+Angeles,+CA+90046,+USA/@34.0839415,-118.3630456,21z/data=!4m5!3m4!1s0x80c2becc033a6111:0xe58808f6bb6a39f3!8m2!3d34.0839873!4d-118.363053"
-            >7959 Melrose Ave, Los Angeles, CA 90046, USA</a
-          >
-        </p>
-        <!-- social media bar -->
-        <div style="width: 100%; display: flex; justify-content: center">
-          <a
-            href="https://www.facebook.com/profile.php?id=100082648522871"
-            target="_blank"
-            ><img src="assets/f.png" class="media" alt="Facebook"
-          /></a>
-          <a
-            href="https://instagram.com/lebowl_?igshid=YmMyMTA2M2Y="
-            target="_blank"
-            ><img src="assets/i.png" class="media" alt="Instagram"
-          /></a>
+      <div id="info" class="row">
+        <div class="col left">
+          <p style="margin-bottom: 0">
+            Take me out from <br />
+            monday till saturday 9am - 8pm
+          </p>
+          <!-- social media bar -->
+          <div style="width: 100%">
+            <a
+              href="https://www.facebook.com/profile.php?id=100082648522871"
+              target="_blank"
+              ><img src="assets/f.svg" class="media" alt="Facebook"
+            /></a>
+            <a
+              href="https://instagram.com/lebowl_?igshid=YmMyMTA2M2Y="
+              target="_blank"
+              ><img src="assets/i.svg" class="media" alt="Instagram"
+            /></a>
+            <a
+              href="https://www.tiktok.com/@lebowl_la?_t=8W7CIS7kLdy&_r=1"
+              target="_blank"
+              ><img src="assets/t.svg" class="media" alt="Instagram"
+            /></a>
+          </div>
+        </div>
+        <div class="col right">
+          <p id="links" class="mb-sm-8">
+            <a class="link" href="mailto:info@lebowl-order.com"
+              >info@lebowl-order.com</a
+            ><br /><a
+              class="link"
+              href="https://www.google.com/maps/place/7959+Melrose+Ave,+Los+Angeles,+CA+90046,+USA/@34.0839415,-118.3630456,21z/data=!4m5!3m4!1s0x80c2becc033a6111:0xe58808f6bb6a39f3!8m2!3d34.0839873!4d-118.363053"
+              >7959 Melrose Ave, Los Angeles, CA 90046, USA</a
+            >
+          </p>
         </div>
       </div>
     </div>
@@ -106,5 +115,52 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        getImage();
+        $(window).resize(getImage);
+      });
+
+      const numBgs = 18;
+      let indexes = [];
+      for (let i = 1; i <= 18; i++) {
+        indexes.push(i);
+      }
+      indexes.sort(() => Math.random() - 0.5);
+      let currIdx = 0;
+      let currBgNb = indexes[currIdx];
+      setInterval(() => {
+        if (currIdx >= indexes.length) {
+          indexes.sort(() => Math.random() - 0.5);
+          currIdx = 0;
+        } else {
+          currIdx++;
+        }
+        currBgNb = indexes[currIdx];
+        getImage();
+      }, 10000);
+
+      const getImage = () => {
+        const width = $("#main").width();
+        if (width < 510) {
+          $("#main").css(
+            "background-image",
+            `url(assets/bg${currBgNb}-sm.jpg)`
+          );
+        } else {
+          $("#main").css(
+            "background-image",
+            `url(assets/bg${currBgNb}-lg.jpg)`
+          );
+        }
+      };
+    </script>
   </body>
 </html>
